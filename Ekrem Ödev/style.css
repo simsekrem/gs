@@ -1,0 +1,56 @@
+/* Arka plan: samiyen.jpg ile çalışmak üzere */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Arka plan resmi (dosya aynı klasörde ise sadece ad yeterli) */
+body {
+  background-image: url('deneme2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed;  --> mobilde problem yapabiliyor, istersen açarız */
+  color: #ff0000;
+  position: relative; /* overlay için referans */
+  font-family: Arial, sans-serif;
+}
+
+
+
+/* Navbar stilleri - overlay'in üstünde görünmesi için z-index: 1000 */
+.custom-navbar {
+  justify-content: center !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.6) !important; /* yarı saydam navbar */
+}
+
+/* Ana içerik navbar üstünde görünmesi için */
+.main-content {
+  z-index: 1001; /* overlay ve arka plan üstünde */
+  position: relative;
+  padding-top: 120px; /* navbar sabit olduğu için içerik aşağıda başlasın */
+}
+
+/* Küçük düzenlemeler */
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.25);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* Navbar her zaman üstte dursun */
+.navbar {
+  position: relative;
+  z-index: 10;
+}
+
+
+
+
